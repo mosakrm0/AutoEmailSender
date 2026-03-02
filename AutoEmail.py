@@ -52,8 +52,8 @@ try:
 
             body = f"""Hello {emp_name},
             
-We noticed that you haven't logged into your email account for over 21 days.
-If you are experiencing any technical issues or need help resetting your password, please reply to this email so we can assist you.
+We noticed that you haven't synced data for over 21 days.
+If you are experiencing any technical issues or need help, please reply to this email so we can assist you.
 
 Best regards,
 IT Support Team
@@ -74,3 +74,4 @@ except Exception as e:
 # Keep the terminal window open to see the results
 
 input("\nPress Enter to exit...")
+
