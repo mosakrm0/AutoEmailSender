@@ -18,16 +18,12 @@ SMTP_PORT = 465
 print("Analyzing the Excel file...")
 
 try:
-    # قراءة ملف الإكسل
     df = pd.read_excel('employees.xlsx')
     
-    # تحويل التواريخ
     df['Last_Login'] = pd.to_datetime(df['Last_Login'])
     
-    # تحديد تاريخ الـ 21 يوم
     cutoff_date = datetime.now() - timedelta(days=21)
     
-    # فلترة الحسابات
     inactive_employees = df[df['Last_Login'] < cutoff_date]
     
     print(f"Found {len(inactive_employees)} inactive accounts.")
@@ -37,7 +33,6 @@ try:
     # ==========================================
     if len(inactive_employees) > 0:
         print("Connecting to the email server (via SSL)...")
-        # الاتصال بالسيرفر باستخدام SSL مباشرة
         server = smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT)
         server.login(MY_EMAIL, MY_PASSWORD)
 
@@ -74,4 +69,5 @@ except Exception as e:
 # Keep the terminal window open to see the results
 
 input("\nPress Enter to exit...")
+
 
