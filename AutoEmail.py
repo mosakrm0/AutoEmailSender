@@ -57,7 +57,6 @@ If you are experiencing any technical issues or need help resetting your passwor
 
 Best regards,
 IT Support Team
-Jordan River Foundation
 """
             msg.attach(MIMEText(body, 'plain', 'utf-8'))
             
@@ -73,4 +72,5 @@ except Exception as e:
     print(f"[ERROR] An error occurred: {e}")
 
 # Keep the terminal window open to see the results
+
 input("\nPress Enter to exit...")
